@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+
+		.boxs {
+			height: 100px;
+			width: 100px;
+			background-color: green;
+			border: solid;
+			position: absolute;
+		}
+		.firsBox {
+			background-color: white;
+			background-image: url(car22.png);
+			background-size: 100% 100%;
+		}
+
+		.boxes{
+			display: none;
+		}
+
+		.perezsgruzka{
+			height: 50px;
+			width: 200px;
+			border-radius: 40px;
+			margin-left: 800px;
+			margin-top: 400px;
+		}
+
+		.content{
+			background-image: url(3.jpg);
+			background-size: 100% 100%;
+			height: 975px;
+		}
+
+		.money1 {
+			height: 75px;
+			width: 150px;
+			margin-left: 20px;
+			margin-top: 10px;
+		}
+
+		.money5 {
+			height: 75px;
+			width: 150px;
+			margin-left: 20px;
+		}
+
+		.money10 {
+			height: 75px;
+			width: 150px;
+			margin-left: 50px;
+			margin-top: 10px;
+		}
+
+		.money20 {
+			height: 75px;
+			width: 150px;
+			margin-left: 50px;
+		}
+
+		.money50 {
+			height: 75px;
+			width: 150px;
+			margin-left: 50px;
+			margin-top: 10px;
+		}
+
+		.boxes_money1 {
+				height: 100px;
+				width: 600px;
+		}
+
+		.boxes_money2 {
+				height: 100px;
+				width: 500px;
+		}
+
+		.box100 {
+			display: flex;
+		}
+
+		.boxes_text {
+			border: 3px solid black;
+			border-radius: 10px;
+		}
+
+	
+
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="box100">
+			<div class="boxes_text">
+				<h4 style="margin-left: 20px; color: white;">Money: <span class="score">150</span></h4>
+				<h4 style="margin-left: 20px; color: white;">Собери наибольшое количество денег!!!</h4>
+				<h4 style="margin-left: 20px; color: white;">За каждый шаг тебе дают 10руб</h4>
+				<h4 style="margin-left: 20px; color: white;">Если денег будет меньше 100 ты пройграл</h4>
+				<img onclick="hod()" src="dice.png" class="bt" style="width: 100px; margin-left: 20px">		
+				<h4 style="margin-left: 20px; color: white;">У тебя 15 шагов</h4>
+				<h4 style="margin-left: 20px; color: white;">Steps: <span class="steps">15</span>
+						
+				</h4>
+			</div>
+			<div class="boxes_money">
+				<div class="boxes_money1">
+						<img src="1.png" class="money1">
+						<img src="2.png" class="money10">
+						<img src="5.png" class="money50">
+
+				</div>
+				<div class="boxes_money2">
+						<img src="3.png" class="money5">
+						<img src="4.png" class="money20">
+				</div>
+			</div>
+		</div>
+		<div class="boxs firsBox" style="margin-left: 20px">
+			<h4>finish</h4>
+		</div>
+		<div class="boxs" style="margin-left: 130px">1</div>
+		<div class="boxs" style="margin-left: 240px">2</div>
+		<div class="boxs" style="margin-left: 350px; background-color: red">3
+				<p>Шаг назад,минус 20 руб</p>
+		</div>
+				
+		<div class="boxs" style="margin-left: 460px">4</div> 
+		<div class="boxs" style="margin-left: 570px">5</div>
+		<div class="boxs" style="margin-left: 680px;  background-color: red">6
+				<p>Шаг назад,минус 20 руб</p>
+		</div>
+		<div class="boxs" style="margin-left: 790px">7</div>
+
+		<div class="boxs" style="margin-left: 900px">8</div>
+		<div class="boxs" style="margin-left: 1010px;background-color: red" >9
+				<p>Шаг назад,минус 20 руб</p>
+		</div>
+		<div class="boxs" style="margin-left: 1120px">10</div>
+		<div class="boxs" style="margin-left: 1230px">11</div>
+
+		<div class="boxs" style="margin-left: 1340px;background-color: red">12 
+			<p>иди назад на -5 клеток,минус 50 руб</p>
+		</div>
+		<div class="boxs" style="margin-left: 1340px; margin-top: 110px">13</div>
+		<div class="boxs" style="margin-left: 1340px; margin-top: 220px">14</div>	
+		<div class="boxs" style="margin-left: 1340px; margin-top: 330px">15</div>		
+
+		<div class="boxs" style="margin-left: 1340px; margin-top: 440px; background-color: red">16
+				<p>иди на -11 клеток,минус 100 руб</p>
+		</div>
+		<div class="boxs" style="margin-left: 1230px; margin-top: 440px">17</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 440px">18</div>
+		<div class="boxs" style="margin-left: 1010px; margin-top: 440px">19</div>
+
+		<div class="boxs" style="margin-left: 900px; margin-top: 440px; background-color: red">20
+				<p>Если насутпишь проиграеш</p>
+		</div>
+		<div class="boxs" style="margin-left: 790px; margin-top: 440px">21</div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 440px">22</div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 440px">23</div>
+
+		<div class="boxs" style="margin-left: 460px; margin-top: 440px; background-color: red">24
+				<p>Шаг назад,минус 30руб</p>
+		</div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 440px">25</div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 440px">26</div>
+		<div class="boxs" style="margin-left: 130px; margin-top: 440px">27</div>
+
+		<div class="boxs" style="margin-left: 20px; margin-top: 440px; background-color: red">28
+				<p>иди на -5 клеток,минус 50 руб</p>
+		</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 330px">29</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 220px">30</div>	
+		<div class="boxs" style="margin-left: 20px; margin-top: 110px">31</div>		
+
+		<!--последние дивы-->
+		<div class="boxs" style="margin-left: 130px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>
+
+	</div>
+		<div class="boxes">
+			<button onclick="pere()" class="perezsgruzka">Играть заново</button>	
+		</div>
+
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+	let duck = document.querySelector(".duck")
+	let btn = document.querySelector(".bt")
+	let boxes = document.querySelectorAll(".boxs")
+ 	let content = document.querySelector(".content")
+	let boxs = document.querySelector(".boxes")
+	let choice = document.querySelector(".choice")
+	let score = 150
+	let steps = 15
+	let shag = 0
+
+	
+
+	function hod(){
+		let number = getRandomArbitrary(1, 6)
+		alert(number)
+		shag = shag + number
+		boxes[shag].style.backgroundImage = "url(car22.png)"
+		boxes[shag].style.backgroundSize = "100% 100%"
+		boxes[shag-number].style.backgroundImage = "none"
+
+
+		score = score + 10
+		document.querySelector(".score").innerHTML = score
+		if(shag>31){
+			alert("win")
+				content.style.display = "none"
+				boxs.style.display = "block"
+		}
+
+		steps = steps - 1
+		document.querySelector(".steps").innerHTML = steps
+		if (steps<0){
+				alert("You loose!")
+				content.style.display = "none"
+				boxs.style.display = "block"
+		}
+
+		if (score <= 110){
+			alert("You loose!!!")
+			content.style.display = "none"
+			boxs.style.display = "block"
+		}
+		
+
+		if (shag==3){
+		alert("Минус очки! Иди на одну клетку назад!")
+		shag = shag - 1
+		boxes[3].style.backgroundImage = "none";
+		boxes[2].style.backgroundImage = "url(car22.png)"
+		boxes[2].style.backgroundSize = "100% 100%"
+		score = score - 20
+		document.querySelector(".score").innerHTML = score
+	    }
+
+	   if (shag==6){
+		alert("Минус очки! Иди на одну клетку назад!")
+		shag = shag - 1
+		boxes[6].style.backgroundImage = "none";
+		boxes[5].style.backgroundImage = "url(car22.png)"
+		boxes[5].style.backgroundSize = "100% 100%"
+		score = score - 20
+		document.querySelector(".score").innerHTML = score
+	    }
+
+	    if (shag==9){
+		alert("Минус очки! Иди на одну клетку назад!")
+		shag = shag - 1
+		boxes[9].style.backgroundImage = "none";
+		boxes[8].style.backgroundImage = "url(car22.png)"
+		boxes[8].style.backgroundSize = "100% 100%"
+		score = score - 20
+		document.querySelector(".score").innerHTML = score
+	    }
+
+	    if (shag==12){
+	    alert("Минус очки! Иди на 5 клеток назад")
+	   	shag = shag - 5
+	   	boxes[12].style.backgroundImage = "none";
+	   	boxes[7].style.backgroundImage = "url(car22.png)"
+	   	boxes[7].style.backgroundSize = "100% 100%"
+	   	score = score - 20
+	   document.querySelector(".score").innerHTML = score
+	    }
+
+	    if (shag==16){
+	    alert("Минус очки! Иди на 11 клеток назад")
+	   	shag = shag - 11
+	   	boxes[16].style.backgroundImage = "none";
+	   	boxes[5].style.backgroundImage = "url(car22.png)"
+	   	boxes[5].style.backgroundSize = "100% 100%"
+	   	score = score - 50
+	   document.querySelector(".score").innerHTML = score
+	    }
+
+	     if (shag==24){
+	    alert("Минус очки! Иди на 11 клеток назад")
+	   	shag = shag - 11
+	   	boxes[24].style.backgroundImage = "none";
+	   	boxes[23].style.backgroundImage = "url(car22.png)"
+	   	boxes[23].style.backgroundSize = "100% 100%"
+	   	score = score - 50
+	   document.querySelector(".score").innerHTML = score
+	    }
+
+	     if (shag==28){
+	    alert("Минус очки! Иди на 11 клеток назад")
+	   	shag = shag - 11
+	   	boxes[28].style.backgroundImage = "none";
+	   	boxes[23].style.backgroundImage = "url(car22.png)"
+	   	boxes[23].style.backgroundSize = "100% 100%"
+	   	score = score - 20
+	   document.querySelector(".score").innerHTML = score
+	    }
+
+	    if (shag==20){
+	    alert("You lose!")
+	   	shag = shag - 5
+	   	boxes[20].style.backgroundImage = "none";
+	   	content.style.display = "none"
+	   	boxs.style.display = "block"
+	    }
+
+
+	}
+
+		function getRandomArbitrary(min, max) {
+ 		 return Math.round(Math.random() * (max - min) + min);
+	}
+
+	function pere(){
+		location.replace(document.URL); 
+		location.assign(document.URL);
+	}
+
+	function obnova(){
+		location.replace(document.URL); 
+		location.assign(document.URL);
+	}	
+	
+
+	
+
+
+
+
+	
+
+
+</script>
